@@ -1,29 +1,16 @@
+'use client'
+
 import { Trash2 } from "lucide-react";
-import { cookies } from "next/headers";
-import { api } from "@/lib/api";
+
 import { EmptyTransactions } from "./EmptyTransactions";
 import clsx from 'clsx'
 import { dateFormatter, priceFormatter } from "@/utils/formatter";
+import { useContext } from "react";
+import { TransactionsContext } from "@/contexts/TransactionsContext";
 
-interface Transaction {
-    id: string
-    description: string
-    price: number
-    category: string
-    deposit: boolean
-    createdAt: string
-    updatedAt: string
-}
+export function TransactionsTable() {
 
-export async function TransactionsTable() {
-    const token  = cookies().get('token')?.value
-    const response = await api.get('/transactions', {
-        headers: {
-            Authorization: `Bearer ${token}`
-        },
-    })
-
-    const transactions: Transaction [] = response.data
+    const transactions = useContext(TransactionsContext)
 
     if (transactions.length == 0) {
         return <EmptyTransactions />
@@ -33,7 +20,7 @@ export async function TransactionsTable() {
         <div className="my-16">
             {/*{JSON.stringify(transactions)}*/}
 
-            {transactions.map(transaction => {
+            {transactions.map((transaction) => {
                 return (
                     <div key={transaction.id} className="relative flex w-full flex-wrap justify-between rounded-md px-6 py-5 p-4 bg-gray-200 gap-2 my-4 font-medium">
                         <div className=" text-gray-900  text-justify lg:w-[30%]">{transaction.description}</div>

@@ -5,7 +5,6 @@ import * as RadioGroup from '@radix-ui/react-radio-group';
 import { ArrowDownCircle, ArrowUpCircle } from 'lucide-react';
 import { FormEvent } from "react";
 import Cookie from 'js-cookie';
-import { priceFormatter } from '@/utils/formatter';
 
 export function NewTransactionForm() {
 
