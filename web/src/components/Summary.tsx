@@ -1,9 +1,16 @@
+'use client'
+
 import Image from "next/image"
 import incomeImg from "../assets/income.svg"
 import outcomeImg from "../assets/outcome.svg"
 import totalImg from "../assets/total.svg"
+import { TransactionsContext } from "@/contexts/TransactionsContext"
+import { useContext } from "react"
 
 export function Summary() {
+    const { transactions } = useContext(TransactionsContext)
+    console.log(transactions)
+
     return (
         <div className="flex w-full flex-wrap gap-8 justify-between min-gap-8">
             <div className="bg-gray-400 py-8 px-6 rounded-lg  min-w-64 w-96 h-36">

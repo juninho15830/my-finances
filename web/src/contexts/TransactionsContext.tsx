@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useCallback, useEffect, useState } from "react";
+import { createContext, FormEvent, ReactNode, useCallback, useEffect, useState } from "react";
 import Cookies from 'js-cookie';
 import { api } from "@/lib/api";
 
@@ -12,11 +12,25 @@ interface Transaction {
   updatedAt: string;
 }
 
+interface TransactionInput {
+  description: string;
+  price: number;
+  category: string;
+  deposit: boolean;
+}
+
 interface TransactionsProviderProps {
   children: ReactNode;
 }
 
-export const TransactionsContext = createContext<Transaction[]>([]);
+interface TransactionsContextData {
+  transactions: Transaction[],
+  createTransaction: (transaction: TransactionInput) => void 
+}
+
+export const TransactionsContext = createContext<TransactionsContextData>(
+  {} as TransactionsContextData
+);
 
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -42,9 +56,20 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
         fetchTransactions()
       }, [fetchTransactions])
 
+    async function createTransaction(transaction: TransactionInput) {
+        await api.post(
+            '/transactions', transaction,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+
+            },
+        )
+    }
 
   return (
-    <TransactionsContext.Provider value={transactions}>
+    <TransactionsContext.Provider value={{ transactions, createTransaction }}>
       {children}
     </TransactionsContext.Provider>
   );

@@ -1,16 +1,15 @@
 'use client'
 
 import { Trash2 } from "lucide-react";
-
-import { EmptyTransactions } from "./EmptyTransactions";
-import clsx from 'clsx'
-import { dateFormatter, priceFormatter } from "@/utils/formatter";
 import { useContext } from "react";
 import { TransactionsContext } from "@/contexts/TransactionsContext";
+import { EmptyTransactions } from "./EmptyTransactions";
+import { dateFormatter, priceFormatter } from "@/utils/formatter";
+import clsx from 'clsx'
 
 export function TransactionsTable() {
 
-    const transactions = useContext(TransactionsContext)
+    const { transactions } = useContext(TransactionsContext)
 
     if (transactions.length == 0) {
         return <EmptyTransactions />
