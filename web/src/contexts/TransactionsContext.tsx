@@ -7,7 +7,7 @@ interface Transaction {
   description: string;
   price: number;
   category: string;
-  deposit: boolean;
+  type: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -16,7 +16,7 @@ interface TransactionInput {
   description: string;
   price: number;
   category: string;
-  deposit: boolean;
+  type: string;
 }
 
 interface TransactionsProviderProps {
@@ -25,7 +25,7 @@ interface TransactionsProviderProps {
 
 interface TransactionsContextData {
   transactions: Transaction[],
-  createTransaction: (transaction: TransactionInput) => void 
+  createTransaction: (transaction: TransactionInput) => Promise<void> 
 }
 
 export const TransactionsContext = createContext<TransactionsContextData>(

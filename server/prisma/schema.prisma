@@ -24,7 +24,7 @@ model Transaction {
   description String
   price       Int
   category    String
-  deposit     Boolean
+  type        String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 

@@ -48,17 +48,17 @@ export async function transactionsRoutes(app: FastifyInstance) {
             description: z.string(),
             price: z.coerce.number(),
             category: z.string(),
-            deposit: z.coerce.boolean(),
+            type: z.string(),
         })
   
-        const { description, price, category, deposit } = bodySchema.parse(request.body)
+        const { description, price, category, type } = bodySchema.parse(request.body)
 
         const transaction = await prisma.transaction.create({
             data: {
                 description,
                 price,
                 category,
-                deposit,
+                type,
                 userId: request.user.sub,
             },
         })
@@ -80,10 +80,10 @@ export async function transactionsRoutes(app: FastifyInstance) {
             description: z.string(),
             price: z.number(),
             category: z.string(),
-            deposit: z.coerce.boolean().default(false),
+            type: z.string(),
         })
 
-        const { description, price, category, deposit  } = bodySchema.parse(request.body)
+        const { description, price, category, type  } = bodySchema.parse(request.body)
 
         let transaction = await prisma.transaction.findUniqueOrThrow({
             where: {
@@ -103,7 +103,7 @@ export async function transactionsRoutes(app: FastifyInstance) {
                 description,
                 price,
                 category,
-                deposit,
+                type,
             },
         })
 

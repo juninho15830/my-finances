@@ -27,8 +27,8 @@ export function TransactionsTable() {
                         {clsx(
                             "text-gray-900 font-bold text-lg lg:w-[20%]",
                             {
-                              'text-red-600': transaction.deposit === false,
-                              'text-green-800': transaction.deposit === true,
+                              'text-red-600': transaction.type === "withdraw",
+                              'text-green-800': transaction.type === "deposit",
                             },
                         )}
                         
