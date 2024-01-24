@@ -39,8 +39,6 @@ export function NewTransactionModal () {
         } catch (error) {
             console.error('Erro ao criar transação:', error);
         }
-
-        console.log(setType)
     }
 
     return (
@@ -122,41 +120,12 @@ export function NewTransactionModal () {
                                 </button>
                             </div>
 
-
-                            {/*<RadioGroup.Root
-                                name="type"
-                                defaultValue="true"
-                                className="mx-0 grid grid-cols-2 gap-4"
-                                >
-                                <RadioGroup.Item
-                                    value="true"
-                                    onSelect={() => setType('deposit')}
-                                    className="accessibilityFocus button group mt-4 flex h-16 flex-grow items-center justify-center gap-4 rounded-md border-0 px-4 text-gray-50 duration-200 hover:brightness-90 ease-linear data-[state=checked]:bg-green-500 data-[state=unchecked]:bg-gray-300 data-[state=checked]:text-gray-50"
-                                >
-                                    <ArrowUpCircle
-                                        size={24}
-                                        className="duration-200 ease-linear group-data-[state=checked]:text-gray-50 group-data-[state=unchecked]:text-green-500"
-                                    />
-                                    <span>Entrada</span>
-                                </RadioGroup.Item>
-                                <RadioGroup.Item
-                                    value="withdraw"
-                                    onSelect={() => setType('withdraw')}
-                                    className="accessibilityFocus button group mt-4 flex h-16 flex-grow items-center justify-center gap-4 rounded-md border-0 px-4 text-gray-50 hover:brightness-90 duration-200 ease-linear data-[state=checked]:bg-red-500 data-[state=unchecked]:bg-gray-300 data-[state=checked]:text-gray-50 "
-                                >
-                                    <ArrowDownCircle
-                                        size={24}
-                                        className="duration-200 ease-linear group-data-[state=checked]:text-gray-50 group-data-[state=unchecked]:text-red-500"
-                                    />
-                                    <span>Saída</span>
-                                </RadioGroup.Item>
-    </RadioGroup.Root> */}
-                                <button
-                                    type="submit"
-                                    className="accessibilityFocus button mt-8 h-12 rounded-md border-0 bg-blue-400 hover:brightness-90 duration-200 px-5 ease-linear disabled:cursor-not-allowed disabled:opacity-60 text-gray-900"
-                                >
-                                    Cadastrar
-                                </button>
+                            <button
+                                type="submit"
+                                className="accessibilityFocus button mt-8 h-12 rounded-md border-0 bg-blue-400 hover:brightness-90 duration-200 px-5 ease-linear disabled:cursor-not-allowed disabled:opacity-60 text-gray-900"
+                            >
+                                Cadastrar
+                            </button>
                 
                         </form>
                         </Dialog.Content>

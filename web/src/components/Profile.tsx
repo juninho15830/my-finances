@@ -4,6 +4,12 @@ import Image from "next/image";
 export function Profile() {
     const { name, avatarUrl } = getUser() 
 
+    const textShadow = {
+        color: '#ffffff',
+        textShadow:
+          '0 0 10px #60a5fa, 0 0 20px #60a5fa, 0 0 40px #60a5fa, 0 0 80px #60a5fa',
+      }
+
     return(
         <div>
             <div className="duration-200 flex items-center gap-3 text-left">
@@ -24,7 +30,7 @@ export function Profile() {
                     </p>
             </div>
 
-            <h1 className="text-4xl font-bold mt-8">My Finances</h1>
+            <h1 className="text-4xl font-bold mt-8" style={textShadow}>My Finances</h1>
         </div>
     )
 }

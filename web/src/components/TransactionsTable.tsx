@@ -9,11 +9,15 @@ import clsx from 'clsx'
 
 export function TransactionsTable() {
 
-    const { transactions } = useContext(TransactionsContext)
+const { transactions, deleteTransaction } = useContext(TransactionsContext)
 
-    if (transactions.length == 0) {
-        return <EmptyTransactions />
-    }
+if (transactions.length == 0) {
+    return <EmptyTransactions />
+}
+
+function handleDeleteTransaction(id: string) {
+    deleteTransaction(id)
+  }
 
     return (
         <div className="my-16">
@@ -34,9 +38,18 @@ export function TransactionsTable() {
                         
                         >{priceFormatter(transaction.price)}</div>
                         <div className="text-gray-900 lg:w-[25%]">{transaction.category}</div>
-                        <time className="text-gray-900 lg:w-[15%]">{dateFormatter(transaction.updatedAt)}</time>
+                        <time className="text-gray-900 lg:w-[15%]">{dateFormatter(transaction.createdAt)}</time>
                         <div className="text-gray-900 text-right lg-[10%]">
-                            <button className=" text-gray-900 hover:text-red-600 duration-200" type="button"><Trash2 size={20} className="" /></button>
+                            <button 
+                                className=" text-gray-900 hover:text-red-600 duration-200" 
+                                type="button"
+                                onClick={(e) => {
+                                    e.stopPropagation()
+                                    handleDeleteTransaction(transaction.id)
+                                }}
+                            >
+                                <Trash2 size={20} className="" />
+                            </button>
                         </div>
                     </div> 
                 )
