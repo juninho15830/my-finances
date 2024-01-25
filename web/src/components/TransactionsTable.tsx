@@ -20,12 +20,12 @@ function handleDeleteTransaction(id: string) {
   }
 
     return (
-        <div className="my-16">
+        <div className="mt-16">
             {/*{JSON.stringify(transactions)}*/}
 
             {transactions.map((transaction) => {
                 return (
-                    <div key={transaction.id} className="relative flex w-full flex-wrap justify-between rounded-md px-6 py-5 p-4 bg-gray-200 gap-2 my-4 font-medium">
+                    <div key={transaction.id} className="relative flex w-full flex-wrap justify-between rounded-md px-6 py-5 bg-gray-200 gap-2 my-4 font-medium">
                         <div className=" text-gray-900  text-justify lg:w-[30%]">{transaction.description}</div>
                         <div className=
                         {clsx(

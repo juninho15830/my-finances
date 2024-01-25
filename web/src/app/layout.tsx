@@ -3,6 +3,7 @@ import { Roboto_Flex as Roboto, Bai_Jamjuree as BaiJamjuree } from 'next/font/go
 import './globals.css'
 import { Header } from '@/components/Header'
 import { Providers } from '@/providers/Providers'
+import { Footer } from '@/components/Footer'
 
 const roboto = Roboto({ 
   subsets: ['latin'],
@@ -32,6 +33,7 @@ export default function RootLayout({
             <main>
               <Header />
               <div className='mt-[-7rem]'>{children}</div>
+              <Footer />
             </main>
           </Providers>
       </body>
