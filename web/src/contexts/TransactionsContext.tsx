@@ -7,7 +7,7 @@ interface Transaction {
   description: string;
   price: number;
   category: string;
-  type: 'deposit' | 'withdraw';
+  type: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -16,7 +16,7 @@ interface TransactionInput {
   description: string;
   price: number;
   category: string;
-  type: 'deposit' | 'withdraw';
+  type: string;
 }
 
 interface TransactionsProviderProps {
