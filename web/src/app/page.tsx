@@ -26,7 +26,7 @@ export default function Home() {
     <div className="max-w-screen-xl m-auto px-8 py-10">
       <div className="bg-gray-500 py-8 px-6 rounded-lg min-w-64 relative">
         <header className="flex items-center justify-between gap-8 text-justify">
-            <p className="text-3xl leading-10 ">Projeto de Gestão Financeira Full-Stack. Front-End desenvolvido em Nextjs 14 App Router, React, Typescript, Tailwindcss e Axios. Back-End desenvolvido em Nodejs e Prisma. Metodo de autenticação pelo GitHub OAuth. </p>
+            <p className="text-3xl leading-10 ">Projeto de Gestão Financeira Full-Stack. Front-End desenvolvido em React Nextjs 14, Typescript e Tailwindcss. Back-End desenvolvido em Nodejs e Prisma. Metodo de autenticação pelo GitHub OAuth. </p>
             <Image className="absolute right-4 bottom-4" src={incomeImg} alt="Entradas" width={32} height={32} />
         </header>
         <strong 
