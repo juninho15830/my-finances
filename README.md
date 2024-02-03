@@ -68,6 +68,11 @@ NEXT_PUBLIC_GITHUB_CLIENT_ID="a3e2fa3fe02c5aea0c77"
 <img src="https://i.imgur.com/2kEr5MG.png" alt="Imagem 8" width="600px">
 
 <p>Em seguida abra o terminal na pasta raiz “web” e faça um “npm install” para instalar as dependências. </p>
+
+```
+npm install
+```
+
 <br>
 
 <h3>4-Criar a variável ambiente no back-end:</h3>
@@ -89,6 +94,11 @@ GITHUB_CLIENT_SECRET="66187c3f6267f9ae405b6e98dacd1028693ef7ef"
 <img src="https://i.imgur.com/bqRK5oY.png" alt="Imagem 9" width="600px">
 
 <p>Em seguida abra o terminal na pasta raiz “server” e faça um “npm install” para instalar as dependências. </p>
+
+```
+npm install
+```
+
 <br>
 
 <h3>5-Rodar o projeto:</h3>
