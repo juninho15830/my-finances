@@ -4,7 +4,14 @@
 <h3> Tecnologias Usadas</h3>
 <p> Nextjs, Tailwind CSS, Typescript, Nodejs, Prisma, SQL Lite</p>
 
+<p>Como ainda não fiz o deploy desta aplicação, você pode ver como ficou clicando no link do video do Youtube</p>
+<a href="https://youtu.be/n6KKB5nYZZQ?si=Bq9JqAB6SopfqhUk">Apresentação do projeto no Youtube</a>
+<br>
+<br>
+
 <img src="https://i.imgur.com/BgD2WMr.png" alt="My-finances">
+<br>
+<br>
 
 # Como instalar
 
