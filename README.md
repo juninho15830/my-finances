@@ -55,7 +55,7 @@ Coloque sua senha e confirme para criar o Client Secret</p>
 
 <h3>3-Criar a variável ambiente no front-end:</h3>
 
-<p></p>Abra a pasta “web” com o VScode ou outra IDE de sua preferência, pasta raiz crie um arquivo chamado “.env.local” e passe o comando:</p>
+<p></p>Abra a pasta “web” com o VScode ou outra IDE de sua preferência,na pasta raiz crie um arquivo chamado “.env.local” e passe o comando:</p>
 
 ```
 #GITHUB#GITHUB
